@@ -30,7 +30,7 @@ define aw_nginx::vhost ($vhost)
     owner   => '0',
     group   => '0',
     mode    => '0755',
-    source  => $vhost,
+    content => template($vhost),
     notify  => Service['nginx']
   }
 }
