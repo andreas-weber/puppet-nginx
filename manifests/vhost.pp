@@ -10,7 +10,7 @@
 # === Examples
 #
 #  aw_nginx::vhost{ 'example':
-#    config => 'puppet:///modules/aw_nginx/vhost-example.conf'
+#    vhost => 'puppet:///modules/aw_nginx/vhost-example.conf'
 #  }
 #
 # === Authors
