@@ -10,7 +10,7 @@
 # === Examples
 #
 #  aw_nginx::vhost{ 'example':
-#    vhost => 'puppet:///modules/aw_nginx/vhost-example.conf'
+#    template_vhost => 'puppet:///modules/aw_nginx/vhost-example.conf'
 #  }
 #
 # === Authors
@@ -21,7 +21,7 @@
 #
 # Copyright 2015 Andreas Weber
 #
-define aw_nginx::vhost ($vhost)
+define aw_nginx::vhost ($template_vhost)
 {
   include aw_nginx
   include aw_nginx::params
@@ -30,7 +30,7 @@ define aw_nginx::vhost ($vhost)
     owner   => '0',
     group   => '0',
     mode    => '0755',
-    content => template($vhost),
+    content => template($template_vhost),
     notify  => Service['nginx']
   }
 }
